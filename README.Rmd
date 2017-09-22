@@ -1,0 +1,118 @@
+---
+output:
+  html_document:
+    highlight: null
+    css: style.css
+    self_contained: no
+    keep_md: true
+---
+
+```{r, echo=FALSE}
+library(stringr)
+
+date <- "9/28/2017"
+vendor <- "Pizza Capri"
+title <- "Title of Talk"
+speaker <- "Luís M. A. Bettencourt"
+department <- "Mansueto Institute for Urban Innovation"
+university <- "University of Chicago"
+github_home <- "https://github.com/uchicago-computation-workshop"
+short_title_n = 3
+
+```
+
+```{r, echo=FALSE}
+#Function to Shorten Title
+small_title <- function(x, n=3) {
+  ul <- unlist(strsplit(x, split = "\\s+"))[1:n]
+  paste(ul,collapse=" ")
+}
+
+#Year
+year <- substr(date, nchar(date)-4+1, nchar(date))
+
+#Author Name
+author_clean <- str_replace_all(str_to_lower(speaker), " ", "_")
+author_lastname <- tail(strsplit(author_clean,split="_")[[1]],1)
+
+#Repository Name
+#repo = paste(year, author_clean, sep = "_")
+repo = author_clean
+issues_page <- paste(github_home, repo, "issues", sep="/")
+
+#Create File Name Parts
+short_title <- small_title(title, short_title_n)
+paper_file <- paste(year, author_lastname, short_title, sep="  ")
+
+#Clean Up File Name
+punct <- '[]\\?!\"\'#$%&(){}+*/:;,._`|~\\[<=>@\\^-]'
+lowered_name <- str_to_lower(paper_file)
+stripped_name <- str_replace_all(lowered_name, punct, "")
+cleaned_name <- str_replace_all(stripped_name, " ", "_")
+cleaned_paper_file <- paste(cleaned_name, "pdf", sep=".")
+
+#File Name Link
+paper_link = paste(github_home, repo, "blob/master", cleaned_paper_file, sep="/"  )
+
+
+#Clean Short Title
+short_title_clean <- str_replace_all(short_title, punct, "")
+
+```
+
+<br>
+
+<h3 class=pfblock-header> The Computation Workshop Presents </h3>
+
+<h1 class=pfblock-header3> `r speaker` </h1>
+<h3 class=pfblock-header3> `r department` </h3>
+<h3 class=pfblock-header3> `r university` </h3>
+
+<br><br>
+
+
+
+<p class=pfblock-header3>The <a href="https://macss.uchicago.edu/content/computation-workshop"> Computation Workshop </a> at the University of Chicago cordially invites you to attend next week's talk:</p>
+
+<br>
+
+<div class=pfblock-header3>
+<h2 class=pfblock-header> 
+  <a href="`r paper_link`" >`r title`</a>
+</h2>
+
+<br>
+</div>
+
+<h4 class=pfblock-header3> Thursday, `r date` </h4>
+<h4 class=pfblock-header3> 11:00am-12:20pm </h4>
+<h4 class=pfblock-header3> Saieh Hall 247 </h4>
+
+<br>
+
+<p class=pfblock-header3>A light lunch will be provided by `r vendor`.</p>
+
+<br><br>
+
+<!--Insert Faculty Bio Here-->
+<div class=footertext2>
+
+
+  **Luís M. A. Bettencourt** is the Pritzker Director of the Mansueto Institute for Urban Innovation at the University of Chicago. He is also a Professor of Ecology and Evolution at the University of Chicago and External Professor of Complex Systems at the Santa Fe Institute. 
+  
+  He was trained as a theoretical physicist and obtained his Licenciatura from Instituto Superior Técnico (Lisbon, Portugal) in 1992, and his PhD from Imperial College (University of London, UK) in 1996 for research in statistical and high-energy physics models of the early Universe.  He has held postdoctoral positions at the University of Heidelberg (Germany), Los Alamos National Laboratory (Director’s Fellow and Slansky Fellow) and at MIT (Center for Theoretical Physics).
+  
+  He has worked extensively on complex systems theory and on cities and urbanization, in particular. His research emphasizes the creation of new interdisciplinary synthesis to describe cities in quantitative and predictive ways, informed by classical theory from various disciplines and the growing availability of empirical data worldwide. 
+  
+  He is the author of over 100 scientific papers and several edited books. His research has been featured in leading media venues, such as the New York Times, Nature, Wired, New Scientist, and the Smithsonian. 
+
+
+</div>
+<br><br>
+
+---
+
+<p class=footertext> The 2017-2018 <a href="https://macss.uchicago.edu/content/computation-workshop"> Computation Workshop </a> meets each Thursday from 11 to 12:20 p.m. in Saieh 247. All interested faculty and graduate students are welcome.</p> 
+
+
+<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on on the <a href="`r issues_page`"> issues page </a> of the <a href="https://github.com/uchicago-computation-workshop"> workshop's public repository on GitHub.</a></p>
