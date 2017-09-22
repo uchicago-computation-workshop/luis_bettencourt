@@ -13,7 +13,7 @@ library(stringr)
 date <- "9/28/2017"
 vendor <- "Pizza Capri"
 title <- "Title of Talk"
-speaker <- "Luís M. A. Bettencourt"
+speaker <- "Luís Bettencourt"
 department <- "Mansueto Institute for Urban Innovation"
 university <- "University of Chicago"
 github_home <- "https://github.com/uchicago-computation-workshop"
@@ -28,11 +28,25 @@ small_title <- function(x, n=3) {
   paste(ul,collapse=" ")
 }
 
+#Characters
+unwanted_array = list(    'Š'='S', 'š'='s', 'Ž'='Z', 'ž'='z', 'À'='A', 'Á'='A', 'Â'='A', 'Ã'='A', 'Ä'='A', 'Å'='A', 'Æ'='A', 'Ç'='C', 'È'='E', 'É'='E',
+                            'Ê'='E', 'Ë'='E', 'Ì'='I', 'Í'='I', 'Î'='I', 'Ï'='I', 'Ñ'='N', 'Ò'='O', 'Ó'='O', 'Ô'='O', 'Õ'='O', 'Ö'='O', 'Ø'='O', 'Ù'='U',
+                            'Ú'='U', 'Û'='U', 'Ü'='U', 'Ý'='Y', 'Þ'='B', 'ß'='Ss', 'à'='a', 'á'='a', 'â'='a', 'ã'='a', 'ä'='a', 'å'='a', 'æ'='a', 'ç'='c',
+                            'è'='e', 'é'='e', 'ê'='e', 'ë'='e', 'ì'='i', 'í'='i', 'î'='i', 'ï'='i', 'ð'='o', 'ñ'='n', 'ò'='o', 'ó'='o', 'ô'='o', 'õ'='o',
+                            'ö'='o', 'ø'='o', 'ù'='u', 'ú'='u', 'û'='u', 'ý'='y', 'ý'='y', 'þ'='b', 'ÿ'='y' )
+
+
 #Year
 year <- substr(date, nchar(date)-4+1, nchar(date))
 
 #Author Name
-author_clean <- str_replace_all(str_to_lower(speaker), " ", "_")
+author_clean_lower <- str_replace_all(str_to_lower(speaker), " ", "_")
+
+#Remove Unwanted Characters
+out <- author_clean_lower
+for(i in seq_along(unwanted_array))
+    out <- gsub(names(unwanted_array)[i],unwanted_array[i],out)
+author_clean <- out
 author_lastname <- tail(strsplit(author_clean,split="_")[[1]],1)
 
 #Repository Name
@@ -46,6 +60,8 @@ paper_file <- paste(year, author_lastname, short_title, sep="  ")
 
 #Clean Up File Name
 punct <- '[]\\?!\"\'#$%&(){}+*/:;,._`|~\\[<=>@\\^-]'
+
+#Remove Punctuation
 lowered_name <- str_to_lower(paper_file)
 stripped_name <- str_replace_all(lowered_name, punct, "")
 cleaned_name <- str_replace_all(stripped_name, " ", "_")
