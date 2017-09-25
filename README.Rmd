@@ -10,7 +10,7 @@ output:
 ```{r, echo=FALSE}
 library(stringr)
 
-date <- "9/28/2017"
+date <- "10/5/2017"
 vendor <- "Pizza Capri"
 title <- "Title of Talk"
 speaker <- "Luís Bettencourt"
@@ -131,4 +131,4 @@ short_title_clean <- str_replace_all(short_title, punct, "")
 <p class=footertext> The 2017-2018 <a href="https://macss.uchicago.edu/content/computation-workshop"> Computation Workshop </a> meets each Thursday from 11 to 12:20 p.m. in Saieh 247. All interested faculty and graduate students are welcome.</p> 
 
 
-<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on on the <a href="`r issues_page`"> issues page </a> of the <a href="https://github.com/uchicago-computation-workshop"> workshop's public repository on GitHub.</a></p>
+<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on the <a href="`r issues_page`"> issues page </a> of the <a href="https://github.com/uchicago-computation-workshop"> workshop's public repository on GitHub.</a></p>
