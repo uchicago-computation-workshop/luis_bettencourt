@@ -21,7 +21,7 @@
 
 <div class=pfblock-header3>
 <h2 class=pfblock-header> 
-  <a href="https://github.com/uchicago-computation-workshop/luis_bettencourt/blob/master/2017__bettencourt__title_of_talk.pdf" >Title of Talk</a>
+  <a href="https://github.com/uchicago-computation-workshop/luis_bettencourt/blob/master/2017__bettencourt__statistics_of_neighborhoods.pdf" >Information, Spatial Selection, and the Statistics of Neighborhoods</a>
 </h2>
 
 <br>
@@ -47,7 +47,7 @@
   
   He has worked extensively on complex systems theory and on cities and urbanization, in particular. His research emphasizes the creation of new interdisciplinary synthesis to describe cities in quantitative and predictive ways, informed by classical theory from various disciplines and the growing availability of empirical data worldwide. 
   
-  He is the author of over 100 scientific papers and several edited books. His research has been featured in leading media venues, such as the New York Times, Nature, Wired, New Scientist, and the Smithsonian. 
+  He is the author of over 100 scientific papers and several edited books. His research has been featured in leading media venues, such as the New York Times, Nature, Wired, New Scientist, and the Smithsonian.
 
 
 </div>
@@ -57,5 +57,7 @@
 
 <p class=footertext> The 2017-2018 <a href="https://macss.uchicago.edu/content/computation-workshop"> Computation Workshop </a> meets each Thursday from 11 to 12:20 p.m. in Saieh 247. All interested faculty and graduate students are welcome.</p> 
 
+<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on the <a href="https://github.com/uchicago-computation-workshop/luis_bettencourt/issues"> issues page </a> of the <a href="https://github.com/uchicago-computation-workshop/luis_bettencourt"> workshop's public repository on GitHub.</a></p>
 
-<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on the <a href="https://github.com/uchicago-computation-workshop/luis_bettencourt/issues"> issues page </a> of the <a href="https://github.com/uchicago-computation-workshop"> workshop's public repository on GitHub.</a></p>
+<p class=footertext>This week, Luís was kind enough to contribute two papers, one in development and a related publication in PNAS. MACSS students should focus their response on the project in development: <a href="https://github.com/uchicago-computation-workshop/luis_bettencourt/blob/master/2017__bettencourt__statistics_of_neighborhoods.pdf" >Information, Spatial Selection, and the Statistics of Neighborhoods</a>, since these comments will have greater potential impact. Both papers are available <a href="https://github.com/uchicago-computation-workshop/luis_bettencourt"> on Github for review. </a></p>
+

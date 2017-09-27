@@ -12,12 +12,14 @@ library(stringr)
 
 date <- "10/5/2017"
 vendor <- "Pizza Capri"
-title <- "Title of Talk"
+title <- "Information, Spatial Selection, and the Statistics of Neighborhoods"
+file_title <- "Statistics of Neighborhoods"
+short_title_n = 3
 speaker <- "Luís Bettencourt"
 department <- "Mansueto Institute for Urban Innovation"
 university <- "University of Chicago"
 github_home <- "https://github.com/uchicago-computation-workshop"
-short_title_n = 3
+
 
 ```
 
@@ -53,9 +55,10 @@ author_lastname <- tail(strsplit(author_clean,split="_")[[1]],1)
 #repo = paste(year, author_clean, sep = "_")
 repo = author_clean
 issues_page <- paste(github_home, repo, "issues", sep="/")
+repo_page <- paste(github_home, repo, sep="/")
 
 #Create File Name Parts
-short_title <- small_title(title, short_title_n)
+short_title <- small_title(file_title, short_title_n)
 paper_file <- paste(year, author_lastname, short_title, sep="  ")
 
 #Clean Up File Name
@@ -120,7 +123,7 @@ short_title_clean <- str_replace_all(short_title, punct, "")
   
   He has worked extensively on complex systems theory and on cities and urbanization, in particular. His research emphasizes the creation of new interdisciplinary synthesis to describe cities in quantitative and predictive ways, informed by classical theory from various disciplines and the growing availability of empirical data worldwide. 
   
-  He is the author of over 100 scientific papers and several edited books. His research has been featured in leading media venues, such as the New York Times, Nature, Wired, New Scientist, and the Smithsonian. 
+  He is the author of over 100 scientific papers and several edited books. His research has been featured in leading media venues, such as the New York Times, Nature, Wired, New Scientist, and the Smithsonian.
 
 
 </div>
@@ -130,5 +133,7 @@ short_title_clean <- str_replace_all(short_title, punct, "")
 
 <p class=footertext> The 2017-2018 <a href="https://macss.uchicago.edu/content/computation-workshop"> Computation Workshop </a> meets each Thursday from 11 to 12:20 p.m. in Saieh 247. All interested faculty and graduate students are welcome.</p> 
 
+<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on the <a href="`r issues_page`"> issues page </a> of the <a href="`r repo_page`"> workshop's public repository on GitHub.</a></p>
 
-<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on the <a href="`r issues_page`"> issues page </a> of the <a href="https://github.com/uchicago-computation-workshop"> workshop's public repository on GitHub.</a></p>
+<p class=footertext>This week, Luís was kind enough to contribute two papers, one in development and a related publication in PNAS. MACSS students should focus their response on the project in development: <a href="`r paper_link`" >`r title`</a>, since these comments will have greater potential impact. Both papers are available <a href="`r repo_page`"> on Github for review. </a></p>
+
