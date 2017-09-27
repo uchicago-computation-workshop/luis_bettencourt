@@ -135,5 +135,5 @@ short_title_clean <- str_replace_all(short_title, punct, "")
 
 <p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on the <a href="`r issues_page`"> issues page </a> of the <a href="`r repo_page`"> workshop's public repository on GitHub.</a></p>
 
-<p class=footertext>This week, Luís was kind enough to contribute two papers, one in development and a related publication in PNAS. MACSS students should focus their response on the project in development: <a href="`r paper_link`" >`r title`</a>, since these comments will have greater potential impact. Both papers are available <a href="`r repo_page`"> on Github for review. </a></p>
+<p class=footertext>This week, Luís was kind enough to contribute two papers, one in development and a related publication in PNAS. MACSS students should focus their response on the project in development: <a href="`r paper_link`" >`r title`</a>, since these comments will have a greater potential impact. Both papers are available <a href="`r repo_page`"> on Github for review. </a></p>
 
