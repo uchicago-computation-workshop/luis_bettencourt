@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
 	font-size: 30px;
-	margin: 0 0 30px;
+	margin: 0 0 0px;
 }
 
 h3 {
@@ -330,6 +330,12 @@ textarea.form-control {
 	margin: 0 0 10px;
 }
 
+.pfblock-header4 {
+	padding: 0em;
+	text-align: center;
+	margin: 0 0 0px;
+}
+
 
 .pfblock-header-left {
 	text-align: left;
@@ -368,7 +374,6 @@ textarea.form-control {
   text-align: justify;
   margin: 0 auto;
   margin-bottom: 10px;
-  width: 90%;
   font-style: normal;
   font-size: 75%;
   a { color: #428bca; }
@@ -379,7 +384,6 @@ textarea.form-control {
   text-align: justify;
   margin: 0 auto;
   margin-bottom: 10px;
-  width: 90%;
   font-style: normal;
   font-size: 100%;
   a { color: #428bca; }
